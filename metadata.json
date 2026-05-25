@@ -1,0 +1,6 @@
+{
+  "name": "VA Digital",
+  "description": "Premium, minimal, and modern digital agency creating high-converting websites for local businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
