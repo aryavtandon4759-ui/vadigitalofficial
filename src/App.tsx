@@ -924,24 +924,24 @@ export default function App() {
               id="ai-support-chat-window"
             >
               {/* Chat Window Header */}
-              <div className="p-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-650 flex items-center justify-between border-b border-white/10">
+              <div className="p-4 bg-gradient-to-r from-red-650 via-rose-600 to-red-600 flex items-center justify-between border-b border-white/10">
                 <div className="flex items-center gap-2.5">
                   <div className="relative">
                     <div className="w-10 h-10 rounded-full bg-black/30 flex items-center justify-center border border-white/15">
                       <Bot className="w-5 h-5 text-white animate-pulse" />
                     </div>
                     {/* Pulsing status indicator */}
-                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-400 rounded-full border-2 border-[#090b0f] animate-ping" />
-                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-emerald-500 rounded-full border-2 border-[#090b0f]" />
+                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-red-400 rounded-full border-2 border-[#090b0f] animate-ping" />
+                    <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-red-500 rounded-full border-2 border-[#090b0f]" />
                   </div>
                   <div className="text-left">
                     <h4 className="text-sm font-bold text-white tracking-tight flex items-center gap-1.5 font-display">
                       VA AI Support Agent
-                      <span className="text-[9px] px-1.5 py-0.5 bg-black/40 text-emerald-300 rounded-full uppercase tracking-wider font-mono font-bold leading-none select-none">
+                      <span className="text-[9px] px-1.5 py-0.5 bg-black/40 text-rose-300 rounded-full uppercase tracking-wider font-mono font-bold leading-none select-none">
                         Online
                       </span>
                     </h4>
-                    <p className="text-[10px] text-emerald-100/80 font-mono flex items-center gap-1">
+                    <p className="text-[10px] text-rose-100/80 font-mono flex items-center gap-1">
                       <Languages className="w-3 h-3 text-white" /> Hinglish • English • Hindi
                     </p>
                   </div>
@@ -963,14 +963,14 @@ export default function App() {
                     className={`flex gap-2.5 ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                   >
                     {msg.role !== "user" && (
-                      <div className="w-7 h-7 rounded-full bg-emerald-950 border border-emerald-900/30 flex items-center justify-center shrink-0 self-end">
-                        <Bot className="w-4 h-4 text-emerald-400" />
+                      <div className="w-7 h-7 rounded-full bg-red-950/40 border border-red-900/20 flex items-center justify-center shrink-0 self-end">
+                        <Bot className="w-4 h-4 text-red-400" />
                       </div>
                     )}
                     <div 
                       className={`max-w-[78%] rounded-2xl px-3.5 py-2 text-xs md:text-sm leading-relaxed ${
                         msg.role === "user" 
-                          ? "bg-emerald-600 text-white rounded-br-none shadow-sm shadow-emerald-700/15 font-sans font-medium" 
+                          ? "bg-red-600 text-white rounded-br-none shadow-sm shadow-red-700/15 font-sans font-medium" 
                           : "bg-[#11141b] border border-white/5 text-gray-200 rounded-bl-none font-sans"
                       }`}
                     >
@@ -981,8 +981,8 @@ export default function App() {
 
                 {isTyping && (
                   <div className="flex gap-2.5 justify-start">
-                    <div className="w-7 h-7 rounded-full bg-emerald-950 border border-emerald-900/30 flex items-center justify-center shrink-0 self-end">
-                      <Bot className="w-4 h-4 text-emerald-400" />
+                    <div className="w-7 h-7 rounded-full bg-red-950/40 border border-red-900/20 flex items-center justify-center shrink-0 self-end">
+                      <Bot className="w-4 h-4 text-red-400" />
                     </div>
                     <div className="bg-[#11141b] border border-white/5 rounded-2xl rounded-bl-none px-4 py-3 flex items-center gap-1">
                       <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-bounce [animation-delay:-0.3s]"></span>
@@ -1022,13 +1022,13 @@ export default function App() {
                     if (e.key === "Enter") handleSendMessage();
                   }}
                   placeholder="Ask in Hindi, English, Hinglish..."
-                  className="flex-1 bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs md:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500/50"
+                  className="flex-1 bg-black/60 border border-white/10 rounded-xl px-3 py-2 text-xs md:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-red-500/50"
                 />
                 <button 
                   id="send-chat-payload"
                   onClick={() => handleSendMessage()}
                   disabled={!inputText.trim()}
-                  className="w-10 h-10 rounded-xl bg-emerald-600 hover:bg-emerald-500 disabled:opacity-40 text-white flex items-center justify-center transition-all cursor-pointer shadow-md active:scale-95"
+                  className="w-10 h-10 rounded-xl bg-red-650 hover:bg-red-500 disabled:opacity-40 text-white flex items-center justify-center transition-all cursor-pointer shadow-md active:scale-95"
                 >
                   <Send className="w-4 h-4" />
                 </button>
@@ -1043,16 +1043,16 @@ export default function App() {
           onClick={() => setChatOpen(!chatOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-tr from-emerald-600 to-emerald-400 hover:from-emerald-500 hover:to-teal-400 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 cursor-pointer border-2 border-white/10 z-40 group focus:outline-none"
+          className="relative w-14 h-14 md:w-16 md:h-16 rounded-full bg-gradient-to-tr from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 text-white flex items-center justify-center shadow-lg shadow-red-500/30 cursor-pointer border-2 border-white/10 z-40 group focus:outline-none"
         >
-          <div className="absolute inset-0 rounded-full bg-emerald-500/30 group-hover:scale-125 transition-transform duration-500 animate-ping pointer-events-none" />
+          <div className="absolute inset-0 rounded-full bg-red-500/30 group-hover:scale-125 transition-transform duration-500 animate-ping pointer-events-none" />
           
           {chatOpen ? (
             <X className="w-6 h-6 md:w-7 md:h-7 text-white" />
           ) : (
             <div className="flex flex-col items-center justify-center">
               <Bot className="w-5.5 h-5.5 md:w-6 md:h-6 text-white transition-transform group-hover:rotate-12" />
-              <span className="text-[7.5px] font-bold font-mono tracking-tighter uppercase text-emerald-100 leading-none mt-0.5">
+              <span className="text-[7.5px] font-bold font-mono tracking-tighter uppercase text-rose-100 leading-none mt-0.5">
                 24/7 AI
               </span>
             </div>
